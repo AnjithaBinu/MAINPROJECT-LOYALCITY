@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>LoyalCity</title>
+
+    <!-- vendor css -->
+    <link href="/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="/static/lib/Ionicons/css/ionicons.css" rel="stylesheet">
+    <link href="/static/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <link href="/static/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
+    <link href="/static/lib/rickshaw/rickshaw.min.css" rel="stylesheet">
+    <link href="/static/lib/chartist/chartist.css" rel="stylesheet">
+
+    <!-- Bracket CSS -->
+    <link rel="stylesheet" href="/static/css/bracket.css">
+  </head>
+
+  <body>
+
+       <!-- ########## START: LEFT PANEL ########## -->
+    <div class="br-logo"><a href="">LoyalCity</a></div>
+    <div class="br-sideleft overflow-y-auto">
+      <label class="sidebar-label pd-x-15 mg-t-20">Navigation</label>
+      <div class="br-sideleft-menu">
+        <a href="cushome.html" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+            <span class="menu-item-label">Dashboard</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+        <a href="cust.html" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon ion-ios-chatboxes tx-20"></i>
+            <span class="menu-item-label">Search</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+         <a href="subshops.html" class="br-menu-link active">
+          <div class="br-menu-item">
+            <i class="menu-item-icon ion-ios-chatboxes tx-20"></i>
+            <span class="menu-item-label">My Shops</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+         <a href="offers.html" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon ion-ios-chatboxes tx-20"></i>
+            <span class="menu-item-label">Offers</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+         <a href="feedback.html" class="br-menu-link">
+          <div class="br-menu-item">
+            <i class="menu-item-icon ion-ios-chatboxes tx-20"></i>
+            <span class="menu-item-label">Feedbacks</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
+      </div><!-- br-sideleft-menu -->
+
+    </div><!-- br-sideleft -->
+    <!-- ########## END: LEFT PANEL ########## -->
+
+    <!-- ########## START: HEAD PANEL ########## -->
+    <div class="br-header">
+      <div class="br-header-left">
+        <div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href=""><i class="icon ion-navicon-round"></i></a></div>
+        <div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href=""><i class="icon ion-navicon-round"></i></a></div>
+
+      </div><!-- br-header-left -->
+      <div class="br-header-right">
+        <nav class="nav">
+
+
+          <div class="dropdown">
+            <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
+              <span class="logged-name hidden-md-down">Katherine</span>
+              <img src="http://via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
+              <span class="square-10 bg-success"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-header wd-200">
+              <ul class="list-unstyled user-profile-nav">
+                <li><a href=""><i class="icon ion-ios-person"></i> Edit Profile</a></li>
+                <li><a href=""><i class="icon ion-ios-gear"></i> Settings</a></li>
+                <li><a href="/"><i class="icon ion-power"></i> Sign Out</a></li>
+              </ul>
+            </div><!-- dropdown-menu -->
+          </div><!-- dropdown -->
+        </nav>
+
+      </div><!-- br-header-right -->
+    </div><!-- br-header -->
+    </div><!-- br-header -->
+
+<form action="" method="POST"> {% csrf_token %}
+    <div class="br-mainpanel">
+      <div class="pd-30">
+        <h4 class="tx-gray-800 mg-b-5">Your Favourite Shops are here....</h4>
+        <p class="mg-b-0"></p>
+      </div><!-- d-flex -->
+      <p>{{a}}</p>
+      <div class="br-pagebody" style="margin-top: 0px;">
+        <div class="br-section-wrapper" style="padding: 0px;">
+
+
+          <div class="bd bd-gray-300 rounded table-responsive">
+              <table class="table table-striped mg-b-0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+               {% for jin in alldata %}
+                <tr>
+                 <td>{{ jin.id }}</td>
+                    <td><button class="btn btn-info" name="name" value="{{jin.sub}}">{{ jin.sub }}</button></td>
+                  <td><input type="button" value="DELETE" class="btn btn-info"></td>
+                  {% endfor %}
+                </tr>
+              </tbody>
+            </table>
+
+
+              <footer class="br-footer">
+        <div class="footer-left">
+          <div class="mg-b-2">Copyright &copy; 2020. LoyalCity. All Rights Reserved.</div>
+        </div>
+
+      </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+   </form>
+  <!-- ########## END: MAIN PANEL ########## -->
+
+    <script src="/static/lib/jquery/jquery.js"></script>
+    <script src="/static/lib/popper.js/popper.js"></script>
+    <script src="/static/lib/bootstrap/bootstrap.js"></script>
+    <script src="/static/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+    <script src="/static/lib/moment/moment.js"></script>
+    <script src="/static/lib/jquery-ui/jquery-ui.js"></script>
+    <script src="/static/lib/jquery-switchbutton/jquery.switchButton.js"></script>
+    <script src="/static/lib/peity/jquery.peity.js"></script>
+    <script src="/static/lib/chartist/chartist.js"></script>
+    <script src="/static/lib/jquery.sparkline.bower/jquery.sparkline.min.js"></script>
+    <script src="/static/lib/d3/d3.js"></script>
+    <script src="/static/lib/rickshaw/rickshaw.min.js"></script>
+
+
+    <script src="/static/js/bracket.js"></script>
+    <script src="/static/js/ResizeSensor.js"></script>
+    <script src="/static/js/dashboard.js"></script>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+{% load static%}
+<head>
+    <title>LOGIN</title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="/static/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/bracket.css">
+    <link rel="stylesheet" href="/static/css/bracket.min.css">
+  </head>
+<body>
+<center>
+    <div class="d-flex align-items-center justify-content-center bg-br-primary ht-100v">
+      <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white rounded shadow-base">
+          <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><img src="https://loyalcity.in/images/logo.png" width="150" style="margin-bottom: 15px;"></div>
+<form action="home/" method="POST">{% csrf_token %}
+<font><br>
+    <font size="4">
+    <input type="text" required= " " name="username" id="userid" placeholder="Enter your Name" style="width: 270px;" class="form-control"><br>
+    <input type="password" required= " " name="password" id="passid" placeholder="Enter Password" style="width: 270px;" class="form-control"><br>
+   <button type="submit" class="btn btn-info btn-block" style="background-color: #3c9ac2">Sign In</button></font>
+</font>
+    <center>
+<div class="LOGIN">
+    <p class= LINK>
+        <a href="resetpwd.html">Forgot Password ?</a></p>
+</div>
+    </center>
+</form>
+      </div>
+    </div>
+</center>
+    <script type = "text/javascript">z
+        $( document ).ready(home() {
+        alert(1);
+        $("done").click(home(){
+            var userid = $(username).val();
+            var passid = $(password).val();
+            alert(pass);
+            $.post( $("#done").attr("data-ajax-ajax"),{'username':user,'password':pass}, function( data ) {
+                alert(1);
+            });
+
+        });
+        });
+    </script>
+	<div class="clearfix"> </div>
+
+ <script src="/static/lib/jquery/jquery.js"></script>
+ <script src="/static/lib/popper.js/popper.js"></script>
+ <script src="/static/lib/bootstrap/bootstrap.js"></script>
+ <script src="/static/css/bracket.min.css"></script>
+ <script src="/static/css/bracket.css"></script>
+
+
+</body>
+</html>
